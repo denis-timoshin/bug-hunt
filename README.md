@@ -37,6 +37,9 @@
 bug-hunt/
 ├── index.html              — игра (HTML, CSS и JS в одном файле)
 ├── 404.html                — страница «не найдено» в виде баг-репорта
+├── robots.txt              — правила для поисковых роботов и ссылка на карту сайта
+├── sitemap.xml             — карта сайта для Яндекса и Google
+├── CNAME                   — домен для GitHub Pages
 └── assets/
     ├── og-image.jpg        — превью для соцсетей, 1200×617
     ├── favicon-32.png      — иконка вкладки
@@ -47,12 +50,16 @@ bug-hunt/
 
 Мета-теги находятся в `<head>` файла `index.html`: title, description, canonical, Open Graph, Twitter Card и разметка Schema.org.
 
-Все ссылки в тегах абсолютные и указывают на https://bug-hunter.denis-timoshin.ru/ — соцсети принимают только полные адреса картинки превью. Если игра переедет на другой домен, замените этот адрес в `index.html`.
+Все ссылки в тегах абсолютные и указывают на https://bug-hunt.denis-timoshin.ru/ — соцсети принимают только полные адреса картинки превью. Если игра переедет на другой домен, замените этот адрес в `index.html`.
 
 Проверить, как выглядит превью ссылки:
 - Telegram — отправить ссылку боту [@WebpageBot](https://t.me/WebpageBot) (он же сбрасывает кеш превью);
 - VK — https://vk.com/dev/pages.clearCache;
 - общий валидатор — https://www.opengraph.xyz.
+
+Для поисковиков есть `robots.txt` (разрешает индексацию и указывает на карту сайта) и `sitemap.xml`. При заметных изменениях игры обновляйте в `sitemap.xml` дату в `<lastmod>`.
+
+Чтобы игра быстрее попала в поиск, добавьте сайт в [Яндекс Вебмастер](https://webmaster.yandex.ru) и [Google Search Console](https://search.google.com/search-console) и отправьте там ссылку на `sitemap.xml`.
 
 ## Технологии
 

@@ -30,6 +30,8 @@ jobs:
         run: |
           mkdir _site
           cp index.html 404.html robots.txt sitemap.xml _site/
+          # файл подтверждения сайта в Google Search Console — не удалять
+          cp google887333dffbabf9cb.html _site/
           cp -R assets _site/assets
 
       # Картинки меняются редко — кешируем на сутки

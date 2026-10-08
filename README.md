@@ -12,7 +12,7 @@
 
 Игра размещена в Yandex Object Storage (бакет `bug-hunt.denis-timoshin.ru`, хостинг статического сайта) с HTTPS-сертификатом Let's Encrypt из Certificate Manager, который продлевается автоматически.
 
-Каждый push в ветку `main` публикует сайт через GitHub Actions (`.github/workflows/deploy.yml`): в бакет загружаются только файлы сайта — `index.html`, `404.html`, `robots.txt`, `sitemap.xml` и папка `assets/`. Запустить публикацию вручную можно на вкладке Actions → Deploy to Yandex Object Storage → Run workflow.
+Каждый push в ветку `main` публикует сайт через GitHub Actions (`.github/workflows/deploy.yml`): в бакет загружаются только файлы сайта — `index.html`, `404.html`, `robots.txt`, `sitemap.xml`, файл подтверждения Google и папка `assets/`. Запустить публикацию вручную можно на вкладке Actions → Deploy to Yandex Object Storage → Run workflow.
 
 Для публикации в репозитории нужны секреты `YC_S3_ACCESS_KEY_ID` и `YC_S3_SECRET_ACCESS_KEY` — статический ключ сервисного аккаунта Yandex Cloud с ролью `storage.editor`.
 
@@ -43,6 +43,7 @@ bug-hunt/
 ├── 404.html                — страница «не найдено» в виде баг-репорта
 ├── robots.txt              — правила для поисковых роботов и ссылка на карту сайта
 ├── sitemap.xml             — карта сайта для Яндекса и Google
+├── google887333dffbabf9cb.html — подтверждение сайта в Google Search Console (не удалять)
 ├── .github/workflows/
 │   └── deploy.yml          — автопубликация в Yandex Object Storage
 └── assets/

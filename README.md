@@ -10,7 +10,11 @@
 
 Откройте `index.html` в любом современном браузере — установка и сборка не нужны. Игра работает на компьютере и телефоне.
 
-Игра опубликована на GitHub Pages из ветки `main` на домене bug-hunt.denis-timoshin.ru (файл `CNAME`): каждый push автоматически обновляет сайт.
+Игра размещена в Yandex Object Storage (бакет `bug-hunt.denis-timoshin.ru`, хостинг статического сайта) с HTTPS-сертификатом Let's Encrypt из Certificate Manager, который продлевается автоматически.
+
+Каждый push в ветку `main` публикует сайт через GitHub Actions (`.github/workflows/deploy.yml`): в бакет загружаются только файлы сайта — `index.html`, `404.html`, `robots.txt`, `sitemap.xml` и папка `assets/`. Запустить публикацию вручную можно на вкладке Actions → Deploy to Yandex Object Storage → Run workflow.
+
+Для публикации в репозитории нужны секреты `YC_S3_ACCESS_KEY_ID` и `YC_S3_SECRET_ACCESS_KEY` — статический ключ сервисного аккаунта Yandex Cloud с ролью `storage.editor`.
 
 ## Правила
 
@@ -39,7 +43,8 @@ bug-hunt/
 ├── 404.html                — страница «не найдено» в виде баг-репорта
 ├── robots.txt              — правила для поисковых роботов и ссылка на карту сайта
 ├── sitemap.xml             — карта сайта для Яндекса и Google
-├── CNAME                   — домен для GitHub Pages
+├── .github/workflows/
+│   └── deploy.yml          — автопубликация в Yandex Object Storage
 └── assets/
     ├── og-image.jpg        — превью для соцсетей, 1200×617
     ├── favicon-32.png      — иконка вкладки

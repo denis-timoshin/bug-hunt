@@ -12,7 +12,7 @@
 
 Игра размещена в Yandex Object Storage (бакет `bug-hunt.denis-timoshin.ru`, хостинг статического сайта) с HTTPS-сертификатом Let's Encrypt из Certificate Manager, который продлевается автоматически.
 
-Каждый push в ветку `main` публикует сайт через GitHub Actions (`.github/workflows/deploy.yml`): в бакет загружаются только файлы сайта — `index.html`, `404.html`, `robots.txt`, `sitemap.xml`, файл подтверждения Google и папка `assets/`. Запустить публикацию вручную можно на вкладке Actions → Deploy to Yandex Object Storage → Run workflow.
+Каждый push в ветку `main` публикует сайт через GitHub Actions (`.github/workflows/deploy.yml`): в бакет загружаются только файлы сайта — `index.html`, `404.html`, `robots.txt`, `sitemap.xml`, `favicon.ico`, файл подтверждения Google и папка `assets/`. Запустить публикацию вручную можно на вкладке Actions → Deploy to Yandex Object Storage → Run workflow.
 
 Для публикации в репозитории нужны секреты `YC_S3_ACCESS_KEY_ID` и `YC_S3_SECRET_ACCESS_KEY` — статический ключ сервисного аккаунта Yandex Cloud с ролью `storage.editor`.
 
@@ -41,6 +41,7 @@
 bug-hunt/
 ├── index.html              — игра (HTML, CSS и JS в одном файле)
 ├── 404.html                — страница «не найдено» в виде баг-репорта
+├── favicon.ico             — иконка по стандартному адресу /favicon.ico (16, 32, 48 px)
 ├── robots.txt              — правила для поисковых роботов и ссылка на карту сайта
 ├── sitemap.xml             — карта сайта для Яндекса и Google
 ├── google887333dffbabf9cb.html — подтверждение сайта в Google Search Console (не удалять)
@@ -49,6 +50,7 @@ bug-hunt/
 └── assets/
     ├── og-image.jpg        — превью для соцсетей, 1200×617
     ├── favicon-32.png      — иконка вкладки
+    ├── favicon-120.png     — иконка для выдачи Яндекса, 120×120
     └── apple-touch-icon.png — иконка для iOS, 180×180
 ```
 

@@ -41,7 +41,7 @@
 bug-hunt/
 ├── index.html              — игра (HTML, CSS и JS в одном файле)
 ├── 404.html                — страница «не найдено» в виде баг-репорта
-├── favicon.ico             — иконка по стандартному адресу /favicon.ico (16, 32, 48 px)
+├── favicon.ico             — иконка по стандартному адресу /favicon.ico (16 и 32 px)
 ├── robots.txt              — правила для поисковых роботов и ссылка на карту сайта
 ├── sitemap.xml             — карта сайта для Яндекса и Google
 ├── google887333dffbabf9cb.html — подтверждение сайта в Google Search Console (не удалять)
@@ -49,7 +49,6 @@ bug-hunt/
 │   └── deploy.yml          — автопубликация в Yandex Object Storage
 └── assets/
     ├── og-image.jpg        — превью для соцсетей, 1200×617
-    ├── favicon-32.png      — иконка вкладки
     ├── favicon-120.png     — иконка для выдачи Яндекса, 120×120
     └── apple-touch-icon.png — иконка для iOS, 180×180
 ```
